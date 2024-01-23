@@ -114,9 +114,9 @@ class ArticleServiceTest {
         then(articleRepository).should().save(any(Article.class));
     }
 
-    @DisplayName("게시글의 ID와 수정 정보를 입력하면, 게시글을 수정한다.")
+    @DisplayName("게시글의 수정 정보를 입력하면, 게시글을 수정한다.")
     @Test
-    void 게시글_수정정보_입력하면_게시글_수정_테스트(){
+    void givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle() {
         // Given
         Article article = createArticle();
         ArticleDto dto = createArticleDto("새 타이틀", "새 내용", "#springboot");
@@ -176,7 +176,7 @@ class ArticleServiceTest {
                 createUserAccount(),
                 "title",
                 "content",
-                "#java"
+                "#springboot"
         );
     }
 
